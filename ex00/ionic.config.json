@@ -1,0 +1,7 @@
+{
+  "name": "ex00",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
