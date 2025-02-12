@@ -1,0 +1,7 @@
+{
+  "name": "ex02",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

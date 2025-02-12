@@ -1,0 +1,65 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title style="text-align: center;">Calculator</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    
+    <!-- Modalità Portrait -->
+    <div *ngIf="isPortrait" class="calculator portrait">
+      <div class="display">
+        <div class="expression">0</div>
+        <div class="result">0</div>
+      </div>
+      <div class="buttons">
+        <button class="equal" (click)="showPress('AC')">AC</button>
+        <button (click)="showPress('C')">C</button>
+        <button class="operation" (click)="showPress('/')">/</button>
+
+        <button *ngFor="let num of [7,8,9]" class="number" (click)="showPress(num)">{{ num }}</button>
+        <button class="operation" (click)="showPress('X')">X</button>
+
+        <button *ngFor="let num of [4,5,6]" class="number" (click)="showPress(num)">{{ num }}</button>
+        <button class="operation" (click)="showPress('-')">-</button>
+
+        <button *ngFor="let num of [1,2,3]" class="number" (click)="showPress(num)">{{ num }}</button>
+        <button class="operation" (click)="showPress('+')">+</button>
+
+        <button *ngFor="let num of ['00', 0]" class="number" (click)="showPress(num)">{{ num }}</button>
+        <button class="number" (click)="showPress('.')">.</button>
+        <button class="operation" (click)="showPress('=')">=</button>
+      </div>
+    </div>
+
+    <!-- Modalità Landscape -->
+    <div *ngIf="!isPortrait" class="calculator landscape">
+      <div class="display">
+        <div class="expression">0</div>
+        <div class="result">0</div>
+      </div>
+      <div class="buttons landscape-layout">
+        <button class="equal" (click)="showPress('AC')">AC</button>
+        <button (click)="showPress('C')">C</button>
+        <button class="operation" (click)="showPress('/')">/</button>
+        <button class="operation" (click)="showPress('X')">X</button>
+        <button *ngFor="let num of [7,8,9]" class="number" (click)="showPress(num)">{{ num }}</button>
+        <button class="operation" (click)="showPress('+')">+</button>
+        <button class="operation" (click)="showPress('-')">-</button>
+        <button *ngFor="let num of [4,5,6]" class="number" (click)="showPress(num)">{{ num }}</button>
+
+        <button class="operation" (click)="showPress('.')">.</button>
+        <button class="operation" (click)="showPress('=')">=</button>
+        <button *ngFor="let num of [1,2,3]" class="number" (click)="showPress(num)">{{ num }}</button>
+
+        <button class="number" (click)="showPress(0)">0</button>
+
+        <button class="number" (click)="showPress('00')">00</button>
+
+
+      </div>
+    </div>
+
+  </ion-content>
+</ion-app>
